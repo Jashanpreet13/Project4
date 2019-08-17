@@ -1,0 +1,81 @@
+<html>
+
+<body>
+	<h2>Top 3 products</h2>
+	<hr>
+	<h4>Enter your details to see the top 3 products</h4>
+    <form action="jashan.html" method="get">
+        Your Name: <input type="text" id="name" name="name" required><br><br>
+        Email Address: <input type="email" id="email" name="email" required placeholder="Please enter your valid email address"><br><br>
+        Age (17-99): <input type="number" required id="age" size="6" name="age" min="17" max="99" value=""><br><br>
+        Your Location: <input type="text" id="location" name="location" required minlength="10"><br><br>
+        <input type="submit" name="submit">
+
+        <style>
+            body{
+                background-color: green;
+            }
+        </style>
+
+    </form>
+    <script type="text/javascript">
+        const inputName = document.getElementById("name");
+        const inputEmail = document.getElementById("email");
+        const inputAge = document.getElementById("age");
+        const inputLocation = document.getElementById("location");
+
+        inputName.addEventListener('input', () => {
+            inputName.setCustomValidity('');
+            inputName.checkValidity();
+        });
+
+        inputName.addEventListener('invalid', () => {
+            if(inputName.value === '') {
+                inputName.setCustomValidity('Please enter your name!!!!!!');
+            }
+        });
+
+        inputEmail.addEventListener('input', () => {
+            inputEmail.setCustomValidity('');
+            inputEmail.checkValidity();
+        });
+
+        inputEmail.addEventListener('invalid', () => {
+            if(inputEmail.value === '') {
+                inputEmail.setCustomValidity('Please enter your email!!!');
+            }
+            else{
+                inputEmail.setCustomValidity('Please enter a valid email address!!!');
+            }
+        });
+
+        inputAge.addEventListener('input', () => {
+            inputAge.setCustomValidity('');
+            inputAge.checkValidity();
+        });
+
+        inputAge.addEventListener('invalid', () => {
+            if(inputAge.value === '') {
+                inputAge.setCustomValidity('Please enter your age!!!!');
+            }
+            else{
+                inputAge.setCustomValidity('Please enter age between 17-99!!!');
+            }
+        });
+
+        inputLocation.addEventListener('input', () => {
+            inputLocation.setCustomValidity('');
+            inputLocation.checkValidity();
+        });
+
+        inputLocation.addEventListener('invalid', () => {
+            if(inputLocation.value === '') {
+                inputLocation.setCustomValidity('Please enter your location!!!!!!!!');
+            }
+            else{
+                inputLocation.setCustomValidity('Please enter at least 10 letters in the location!!!!!!!');
+            }
+        });
+    </script>
+</body>
+</html>
